@@ -4,11 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (document.querySelector(".typing")) {
     new Typed(".typing", {
       strings: [
-        "LL",
-        "GraphicDesigner",
-        "RRRH|",
-        "YouTuber",
-        "WEHGH"
+        "Graphic Designer",
+        "UX/UI Designer",
       ],
       typeSpeed: 100,
       backSpeed: 60,
