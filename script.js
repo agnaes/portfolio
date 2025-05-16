@@ -6,9 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
       strings: [
         "Graphic Designer",
         "UX/UI Designer",
-        "Crazy plant lady",
-        "Gourmet chef",
-        "Retoucher",
+        "crazy plant lady",
+        "outdoor sport enthusiast"
       ],
       typeSpeed: 100,
       backSpeed: 60,
