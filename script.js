@@ -2,9 +2,11 @@
 
 var typed = new Typed(".typing", {
   strings: [
-    "UX | UI Designer",
-    "Graphic Designer",
+    "LL",
+    "GraphicDesigner",
+    "RRRH|",
     "YouTuber",
+    "WEHGH"
   ],
   typeSpeed: 100,
   backSpeed: 60,
