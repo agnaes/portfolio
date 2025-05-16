@@ -7,7 +7,7 @@ var typed = new Typed(".typing", {
     "YouTuber",
   ],
   typeSpeed: 100,
-  BackSpeed: 60,
+  backSpeed: 60,
   loop: true,
 });
 
