@@ -709,6 +709,33 @@ h3.my-profession {
     display: block;
 }
 
+/* project1 */
+.project1 .container {
+    padding-bottom: 40px;
+}
+
+.project1 .project1-heading {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 40px;
+}
+
+.project1 .project1-heading h2 {
+    color: var(--text-black-900);
+    font-weight: 500;
+}
+.project1 .img-inside {
+max-width: 100%;
+  height: auto;
+
+}
+.img-inside img {
+    width: 70%;
+    height: auto;
+    display: block;
+    margin: 0 auto; 
+    border-radius: 20px;
+}
 /* Contact */
 .contact-title {
     color: var(--skin-color);
