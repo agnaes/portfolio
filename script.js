@@ -63,32 +63,33 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-const navTogglerBtn =document.querySelector(".nav-toggler"),
-     aside= document.querySelector(".aside");
-     navTogglerBtn.addEventListener("click", ()=>{
-        asideSectionTogglerBtn()
-     })
-     function asideSectionTogglerBtn() {
-         aside.classList.toggle("open");
-         navTogglerBtn.classList.toggle("open")
-         for (let i = 0; i < totalSection; i++) {
-            allSection[i].classList.toggle("open");
-          }
-     }
-     // Handle all anchor links with hashes (for portfolio images, etc.)
-document.querySelectorAll('a[href^="#"]').forEach(function(link) {
-  link.addEventListener('click', function(e) {
-    const targetId = this.getAttribute('href').substring(1);
-    const targetSection = document.getElementById(targetId);
-    if (targetSection && targetSection.classList.contains('section')) {
-      e.preventDefault();
-      // Remove active from all sections
-      document.querySelectorAll('.section').forEach(function(sec) {
-        sec.classList.remove('active');
-      });
-      // Add active to the target section
-      targetSection.classList.add('active');
-      // Optionally, update nav active state if needed
+  const navTogglerBtn = document.querySelector(".nav-toggler"),
+    aside = document.querySelector(".aside");
+  navTogglerBtn.addEventListener("click", () => {
+    asideSectionTogglerBtn()
+  })
+  function asideSectionTogglerBtn() {
+    aside.classList.toggle("open");
+    navTogglerBtn.classList.toggle("open")
+    for (let i = 0; i < totalSection; i++) {
+      allSection[i].classList.toggle("open");
     }
+  }
+  // Handle all anchor links with hashes (for portfolio images, etc.)
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      if (targetSection && targetSection.classList.contains('section')) {
+        e.preventDefault();
+        // Remove active from all sections
+        document.querySelectorAll('.section').forEach(function (sec) {
+          sec.classList.remove('active');
+        });
+        // Add active to the target section
+        targetSection.classList.add('active');
+        // Optionally, update nav active state if needed
+      }
+    });
   });
 });
