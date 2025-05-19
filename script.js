@@ -87,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Add active to the target section
         targetSection.classList.add('active');
         // Optionally, update nav active state if needed
+          window.location.hash = targetId;
       }
     });
   });
