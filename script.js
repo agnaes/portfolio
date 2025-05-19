@@ -6,8 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
       strings: [
         "Graphic Designer",
         "UX/UI Designer",
-        "crazy plant lady",
-        "outdoor sport enthusiast"
       ],
       typeSpeed: 100,
       backSpeed: 60,
@@ -91,5 +89,11 @@ document.addEventListener("DOMContentLoaded", () => {
         // Optionally, update nav active state if needed
       }
     });
+  });
+});
+document.querySelectorAll('.nav li a').forEach(link => {
+  link.addEventListener('click', function() {
+    document.querySelectorAll('.nav li a').forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
   });
 });
