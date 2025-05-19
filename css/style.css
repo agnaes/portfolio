@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;500;600;700&display=swap');
 
 :root {
-    --bg-black-900: #fef7f1;
+    --bg-black-900: #fbf3f9;
     --bg-black-100: #fdf9ff;
-    --bg-black-50: #fff5ea;
+    --bg-black-50: #e9e9e9;
     --text-black-900: #302e4d;
     --text-black-700: #504e70;
 
@@ -193,7 +193,7 @@ ul {
 }
 
 .aside .logo a span {
-    font-family: 'Clicker Script', cursive;
+    font-family: 'Clicker Script';
     font-size: 26px;
 }
 
