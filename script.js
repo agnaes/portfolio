@@ -12,7 +12,55 @@ document.addEventListener("DOMContentLoaded", () => {
       loop: true,
     });
   }
+  if (document.querySelector(".typing-project1")) {
+  new Typed(".typing-project1", {
+    strings: ["T Y P O G R A P H Y"],
+    typeSpeed: 70,
+    backSpeed: 40,
+    loop: true
+  });
+}
 
+ if (document.querySelector(".typing-project2")) {
+  new Typed(".typing-project2", {
+    strings: ["T Y P O G R A P H Y"],
+    typeSpeed: 70,
+    backSpeed: 40,
+    loop: true
+  });
+}
+if (document.querySelector(".typing-project3")) {
+  new Typed(".typing-project3", {
+    strings: ["T Y P O G R A P H Y"],
+    typeSpeed: 70,
+    backSpeed: 40,
+    loop: true
+  });
+}
+ if (document.querySelector(".typing-project4")) {
+  new Typed(".typing-project4", {
+    strings: ["T Y P O G R A P H Y"],
+    typeSpeed: 70,
+    backSpeed: 40,
+    loop: true
+  });
+}
+ if (document.querySelector(".typing-project5")) {
+  new Typed(".typing-project5", {
+    strings: ["T Y P O G R A P H Y"],
+    typeSpeed: 70,
+    backSpeed: 40,
+    loop: true
+  });
+}
+ if (document.querySelector(".typing-project6")) {
+  new Typed(".typing-project6", {
+    strings: ["T Y P O G R A P H Y"],
+    typeSpeed: 70,
+    backSpeed: 40,
+    loop: true
+  });
+}
   // Navigation and Sections
   const nav = document.querySelector(".nav");
   const navList = nav?.querySelectorAll("li") || [];

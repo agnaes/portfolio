@@ -39,7 +39,7 @@
 }
 
 .style-switcher .day-night {
-    top: 55px;
+    top: 10x;
 }
 .style-switcher h4{
     margin: 0 0 10px;
@@ -64,10 +64,10 @@
     background: #9500ff;
 }
 .style-switcher .color-2{
-    background: #9500ff;
+    background: #ffc164;
 }
 .style-switcher .color-3{
-    background: #9500ff;
+    background: #00a076;
 }
 .style-switcher .color-4{
     background: #1854b4;
