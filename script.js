@@ -11,6 +11,34 @@ document.addEventListener("DOMContentLoaded", () => {
       backSpeed: 60,
       loop: true,
     });
+      // Formspree form submission without redirect
+  const form = document.querySelector("form[action^='https://formspree.io']");
+  if (form) {
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+        if (response.ok) {
+          alert("Message sent successfully!");
+          form.reset();
+        } else {
+          const errorData = await response.json();
+          alert(errorData.message || "Something went wrong. Please try again.");
+        }
+      } catch (error) {
+        alert("There was a problem submitting the form.");
+        console.error(error);
+      }
+    });
+  }
+
   }
   if (document.querySelector(".typing-project1")) {
   new Typed(".typing-project1", {
@@ -146,3 +174,4 @@ document.querySelectorAll('.nav li a').forEach(link => {
     this.classList.add('active');
   });
 });
+

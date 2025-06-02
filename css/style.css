@@ -626,6 +626,7 @@ h3.my-profession {
 .about .about-content .timeline .timeline-item {
     position: relative;
     padding-left: 37px;
+    padding-right: 37px;
     padding-bottom: 50px;
 }
 
@@ -1027,6 +1028,12 @@ ul {
 }
 .color-glam-grey{
     background-color: #434142;
+}
+.color-wunda-grey{
+    background-color: #707070;
+}
+.color-wunda-blue{
+    background-color: #4999d4;
 }
 /* Hover scale effect */
 .color-box:hover {
