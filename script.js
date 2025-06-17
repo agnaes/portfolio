@@ -1,5 +1,30 @@
 // Wait for the DOM to be fully loaded
 document.addEventListener("DOMContentLoaded", () => {
+  //slider//
+
+  document.querySelectorAll('.comparison-slider').forEach((container) => {
+    const afterImg = container.querySelector('.img-after');
+    const handle = container.querySelector('.slider-handle');
+
+    const updateSlider = (x) => {
+      const rect = container.getBoundingClientRect();
+      let relativeX = x - rect.left;
+      if (relativeX < 0) relativeX = 0;
+      if (relativeX > rect.width) relativeX = rect.width;
+
+      const percent = (relativeX / rect.width) * 100;
+      afterImg.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+      handle.style.left = `${percent}%`;
+    };
+
+    container.addEventListener('mousemove', (e) => {
+      updateSlider(e.clientX);
+    });
+
+    container.addEventListener('touchmove', (e) => {
+      updateSlider(e.touches[0].clientX);
+    }, { passive: true });
+  });
   // Typing animation (requires Typed.js to be loaded in HTML)
   if (document.querySelector(".typing")) {
     new Typed(".typing", {
@@ -11,84 +36,84 @@ document.addEventListener("DOMContentLoaded", () => {
       backSpeed: 60,
       loop: true,
     });
-      // Formspree form submission without redirect
-  const form = document.querySelector("form[action^='https://formspree.io']");
-  if (form) {
-    form.addEventListener("submit", async function (e) {
-      e.preventDefault();
-      const data = new FormData(form);
-      try {
-        const response = await fetch(form.action, {
-          method: form.method,
-          body: data,
-          headers: {
-            'Accept': 'application/json'
+    // Formspree form submission without redirect
+    const form = document.querySelector("form[action^='https://formspree.io']");
+    if (form) {
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const data = new FormData(form);
+        try {
+          const response = await fetch(form.action, {
+            method: form.method,
+            body: data,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+          if (response.ok) {
+            alert("Message sent successfully!");
+            form.reset();
+          } else {
+            const errorData = await response.json();
+            alert(errorData.message || "Something went wrong. Please try again.");
           }
-        });
-        if (response.ok) {
-          alert("Message sent successfully!");
-          form.reset();
-        } else {
-          const errorData = await response.json();
-          alert(errorData.message || "Something went wrong. Please try again.");
+        } catch (error) {
+          alert("There was a problem submitting the form.");
+          console.error(error);
         }
-      } catch (error) {
-        alert("There was a problem submitting the form.");
-        console.error(error);
-      }
-    });
-  }
+      });
+    }
 
   }
   if (document.querySelector(".typing-project1")) {
-  new Typed(".typing-project1", {
-    strings: ["T Y P O G R A P H Y"],
-    typeSpeed: 70,
-    backSpeed: 40,
-    loop: true
-  });
-}
+    new Typed(".typing-project1", {
+      strings: ["T Y P O G R A P H Y"],
+      typeSpeed: 70,
+      backSpeed: 40,
+      loop: true
+    });
+  }
 
- if (document.querySelector(".typing-project2")) {
-  new Typed(".typing-project2", {
-    strings: ["T Y P O G R A P H Y"],
-    typeSpeed: 70,
-    backSpeed: 40,
-    loop: true
-  });
-}
-if (document.querySelector(".typing-project3")) {
-  new Typed(".typing-project3", {
-    strings: ["T Y P O G R A P H Y"],
-    typeSpeed: 70,
-    backSpeed: 40,
-    loop: true
-  });
-}
- if (document.querySelector(".typing-project4")) {
-  new Typed(".typing-project4", {
-    strings: ["T Y P O G R A P H Y"],
-    typeSpeed: 70,
-    backSpeed: 40,
-    loop: true
-  });
-}
- if (document.querySelector(".typing-project5")) {
-  new Typed(".typing-project5", {
-    strings: ["T Y P O G R A P H Y"],
-    typeSpeed: 70,
-    backSpeed: 40,
-    loop: true
-  });
-}
- if (document.querySelector(".typing-project6")) {
-  new Typed(".typing-project6", {
-    strings: ["T Y P O G R A P H Y"],
-    typeSpeed: 70,
-    backSpeed: 40,
-    loop: true
-  });
-}
+  if (document.querySelector(".typing-project2")) {
+    new Typed(".typing-project2", {
+      strings: ["T Y P O G R A P H Y"],
+      typeSpeed: 70,
+      backSpeed: 40,
+      loop: true
+    });
+  }
+  if (document.querySelector(".typing-project3")) {
+    new Typed(".typing-project3", {
+      strings: ["T Y P O G R A P H Y"],
+      typeSpeed: 70,
+      backSpeed: 40,
+      loop: true
+    });
+  }
+  if (document.querySelector(".typing-project4")) {
+    new Typed(".typing-project4", {
+      strings: ["T Y P O G R A P H Y"],
+      typeSpeed: 70,
+      backSpeed: 40,
+      loop: true
+    });
+  }
+  if (document.querySelector(".typing-project5")) {
+    new Typed(".typing-project5", {
+      strings: ["T Y P O G R A P H Y"],
+      typeSpeed: 70,
+      backSpeed: 40,
+      loop: true
+    });
+  }
+  if (document.querySelector(".typing-project6")) {
+    new Typed(".typing-project6", {
+      strings: ["T Y P O G R A P H Y"],
+      typeSpeed: 70,
+      backSpeed: 40,
+      loop: true
+    });
+  }
   // Navigation and Sections
   const nav = document.querySelector(".nav");
   const navList = nav?.querySelectorAll("li") || [];
@@ -163,40 +188,16 @@ if (document.querySelector(".typing-project3")) {
         // Add active to the target section
         targetSection.classList.add('active');
         // Optionally, update nav active state if needed
-          window.location.hash = targetId;
+        window.location.hash = targetId;
       }
     });
   });
 });
 document.querySelectorAll('.nav li a').forEach(link => {
-  link.addEventListener('click', function() {
+  link.addEventListener('click', function () {
     document.querySelectorAll('.nav li a').forEach(l => l.classList.remove('active'));
     this.classList.add('active');
   });
 });
 
-//(Place at end of body or in your main JS file)//
 
-  document.querySelectorAll('.comparison-slider').forEach((container) => {
-    const afterImg = container.querySelector('.img-after');
-    const handle = container.querySelector('.slider-handle');
-
-    const updateSlider = (x) => {
-      const rect = container.getBoundingClientRect();
-      let relativeX = x - rect.left;
-      if (relativeX < 0) relativeX = 0;
-      if (relativeX > rect.width) relativeX = rect.width;
-
-      const percent = (relativeX / rect.width) * 100;
-      afterImg.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
-      handle.style.left = `${percent}%`;
-    };
-
-    container.addEventListener('mousemove', (e) => {
-      updateSlider(e.clientX);
-    });
-
-    container.addEventListener('touchmove', (e) => {
-      updateSlider(e.touches[0].clientX);
-    }, { passive: true });
-  });
