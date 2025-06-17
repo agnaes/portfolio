@@ -1231,6 +1231,13 @@ ul {
     padding: 0 50px;
 }
 
+
+@media (max-width: 768px) {
+  .image-grid-sm {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width:1199px) {
     .section .container {
         padding-top: 70px;
