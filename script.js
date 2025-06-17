@@ -174,6 +174,25 @@ document.addEventListener("DOMContentLoaded", () => {
       allSection[i].classList.toggle("open");
     }
   }
+  // Close side menu on mobile after clicking any nav link
+navList.forEach((navItem, index) => {
+  const link = navItem.querySelector("a");
+  link.addEventListener("click", function () {
+    removeBackSection();
+    addBackSection(index);
+    showSection(this);
+    updateNav(this);
+
+    // Auto-close the menu on mobile
+    if (window.innerWidth < 768) {
+      aside.classList.remove("open");
+      navTogglerBtn.classList.remove("open");
+      for (let i = 0; i < totalSection; i++) {
+        allSection[i].classList.remove("open");
+      }
+    }
+  });
+});
   // Handle all anchor links with hashes (for portfolio images, etc.)
   document.querySelectorAll('a[href^="#"]').forEach(function (link) {
     link.addEventListener('click', function (e) {
