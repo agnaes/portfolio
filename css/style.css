@@ -1238,6 +1238,18 @@ ul {
   }
 }
 
+@media (max-width: 768px) {
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* @media (max-width: 768px) {
+  .image-grid-ewa {
+    grid-template-columns: 1fr;
+  }
+} */
+
 @media (max-width:1199px) {
     .section .container {
         padding-top: 70px;
