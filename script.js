@@ -175,3 +175,28 @@ document.querySelectorAll('.nav li a').forEach(link => {
   });
 });
 
+//(Place at end of body or in your main JS file)//
+
+  document.querySelectorAll('.comparison-slider').forEach((container) => {
+    const afterImg = container.querySelector('.img-after');
+    const handle = container.querySelector('.slider-handle');
+
+    const updateSlider = (x) => {
+      const rect = container.getBoundingClientRect();
+      let relativeX = x - rect.left;
+      if (relativeX < 0) relativeX = 0;
+      if (relativeX > rect.width) relativeX = rect.width;
+
+      const percent = (relativeX / rect.width) * 100;
+      afterImg.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+      handle.style.left = `${percent}%`;
+    };
+
+    container.addEventListener('mousemove', (e) => {
+      updateSlider(e.clientX);
+    });
+
+    container.addEventListener('touchmove', (e) => {
+      updateSlider(e.touches[0].clientX);
+    }, { passive: true });
+  });
